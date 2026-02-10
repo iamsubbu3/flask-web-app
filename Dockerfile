@@ -1,9 +1,10 @@
-FROM python:3.14.0a2-slim
+FROM python:3.12-slim
+
+RUN apt-get update && apt-get upgrade -y && apt-get clean
 
 WORKDIR /flaskapp
+COPY app.py requirements.txt .
 
-COPY app.py requirements.txt /flaskapp/
+RUN pip install --no-cache-dir -r requirements.txt
 
-RUN pip install -r requirements.txt
-
-CMD [ "python", "app.py" ]
+CMD ["python","app.py"]
