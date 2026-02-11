@@ -3,9 +3,17 @@ from flask import Flask
 
 app = Flask(__name__)
 
+@app.route("/")
+def home():
+    return "Flask App Running", 200
+
 @app.route("/wish")
 def pleaseWish():
-    return "Hello, Welcome to First Devops Project"
+    return "Hello, Welcome to First Devops Project", 200
+
+@app.route("/health")
+def health():
+    return "OK", 200
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
