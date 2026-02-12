@@ -23,7 +23,7 @@ pipeline {
         REGISTRY_CRED       = 'docker-credentials'
 
         /* ---------- AWS / EKS ---------- */
-        EKS_CLUSTER_NAME    = 'subbu-cluster'
+        EKS_CLUSTER_NAME    = 'subbu-1-cluster'
         AWS_REGION          = 'us-east-1'
 
         /* ---------- Notifications ---------- */
